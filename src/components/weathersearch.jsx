@@ -1,5 +1,6 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { WeatherContext } from "../context/weathercontext";
+import { Search } from "lucide-react";
 import axios from "axios";
 const WeatherSearch = () => {
     const { city, setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp } = useContext(WeatherContext);
@@ -26,7 +27,7 @@ const WeatherSearch = () => {
     }
 
     return (
-        <div className="p-3 sm:p-10 md:p-15">
+        <div className="p-3 sm:p-10 md:p-16">
             <header className="flex justify-center items-center gap-2 mb-8">
                 <h1 className="text-5xl sm:text-9xl">⛅</h1>
                 <div>
@@ -34,9 +35,13 @@ const WeatherSearch = () => {
                     <p className="text-xs sm:text-base">Check the weather details of any city</p>
                 </div>
             </header>
-            <div className="grid grid-cols-3 justify-between items-center gap-2">
-                <input className="border border-1 text-xs col-span-2 border-blue-300 rounded-md p-2 sm:p-4 sm:text-base" value={city} type="text" placeholder="Enter the City Name" required onChange={handleCity} />
-                <button className="cursor-pointer bg-gradient-to-r from-blue-500 to-violet-500 text-xs text-white p-2 rounded-md sm:p-4 sm:text-base" onClick={handleWeather}><i class="fa-solid fa-magnifying-glass"></i>Get Weather</button>
+            <div className="grid grid-cols-3 justify-between items-center gap-2 relative">
+                <input className="border border-1 ring-blue-200 ring-2 focus:outline-none focus:border-blue-500 focus:border-2 focus:ring-2 focus:ring-blue-200 text-xs col-span-2 border-blue-300 rounded-md p-2 sm:p-4 sm:text-base" value={city} type="text" placeholder="Enter the City Name" required onChange={handleCity}/>
+                <button className="relative cursor-pointer focus:outline-none bg-gradient-to-r from-cyan-500 to-violet-500 text-xs text-white p-2 rounded-md sm:p-4 sm:text-base" onClick={handleWeather}>
+                    <i className="fa-solid fa-magnifying-glass absolute left-[4%] top-[50%] sm:left-[10%] -translate-y-1.5 z-10 text-white text-xs sm:text-base"></i>
+                    <span className="block text-center">Get Weather</span>
+                </button>
+
             </div>
         </div>
     )
