@@ -27,13 +27,13 @@ const WeatherSearch = () => {
     }
 
     return (
-        <div className="p-3 sm:p-10 md:p-16">
+        <div className="p-3 mt-5 sm:p-10 md:p-16">
             <header className="flex justify-between items-center gap-2 mb-8">
                 <div className="flex gap-3">
                 <h1 className="text-5xl sm:text-9xl">⛅</h1>
-                <div className="flex flex-col justify-center items-center">
-                    <h1 className="text-xl font-bold sm:text-3xl">Weather App</h1>
-                    <p className="text-xs sm:text-base">Check the weather details of any city</p>
+                <div className="flex flex-col justify-center">
+                    <h1 className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent text-xl font-bold sm:text-3xl">Weather App</h1>
+                    <p className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent text-xs sm:text-base">Check the weather details of any city</p>
                 </div>
                 </div>
                 <CurrentLocation/>
