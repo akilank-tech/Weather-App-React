@@ -7,42 +7,42 @@ const WeatherDetails = () => {
         "text-lg sm:h-12 sm:w-12 sm:text-2xl md:h-14 md:text-3xl"
 
     const details = [{
-        icon: <span className={`${iconBase} bg-blue-300 text-blue-600`}><i class="fa-regular fa-cloud"></i></span>,
+        icon: <span className={`${iconBase} bg-blue-300 text-blue-600`}><i className="fa-regular fa-cloud"></i></span>,
         title: "Weather",
         value: weather
     },
     {
-        icon: <span className={`${iconBase} bg-violet-300 text-violet-700`}><i class="fa-solid fa-clipboard-list"></i></span>,
+        icon: <span className={`${iconBase} bg-violet-300 text-violet-700`}><i className="fa-solid fa-clipboard-list"></i></span>,
         title: "Description",
         value: desc
     },
     {
-        icon: <span className={`${iconBase} bg-red-300 text-red-600`}><i class="fa-solid fa-temperature-high"></i></span>,
+        icon: <span className={`${iconBase} bg-red-300 text-red-600`}><i className="fa-solid fa-temperature-high"></i></span>,
         title: "Temperature",
         value: temp ? `${temp}°C` : "--"
     },
     {
-        icon: <span className={`${iconBase} bg-violet-300 text-violet-800`}><i class="fa-solid fa-temperature-half"></i></span>,
+        icon: <span className={`${iconBase} bg-violet-300 text-violet-800`}><i className="fa-solid fa-temperature-half"></i></span>,
         title: "Feels Like",
         value: feelsLike ? `${feelsLike}°C` : "--"
     },
     {
-        icon: <span className={`${iconBase} bg-blue-200 text-blue-800`}><i class="fa fa-tint" aria-hidden="true"></i></span>,
+        icon: <span className={`${iconBase} bg-blue-200 text-blue-800`}><i className="fa fa-tint" aria-hidden="true"></i></span>,
         title: "Humidity",
         value: humidity ? `${humidity}%` : "--"
     },
     {
-        icon: <span className={`${iconBase} bg-gray-300 text-violet-800`}><i class="fa-solid fa-wind"></i></span>,
+        icon: <span className={`${iconBase} bg-gray-300 text-violet-800`}><i className="fa-solid fa-wind"></i></span>,
         title: "Wind Speed",
         value: windSpeed !== "" ? `${windSpeed} m/s` : ""
     },
     {
-        icon: <span className={`${iconBase} bg-blue-100 text-blue-700`}><i class="fa-solid fa-gauge"></i></span>,
+        icon: <span className={`${iconBase} bg-blue-100 text-blue-700`}><i className="fa-solid fa-gauge"></i></span>,
         title: "Pressure",
         value: pressure !== "" ? `${pressure} hpa` : ""
     },
     {
-        icon: <span className={`${iconBase} bg-rose-300 text-rose-600`}><i class="fa-solid fa-plus-minus"></i></span>,
+        icon: <span className={`${iconBase} bg-rose-300 text-rose-600`}><i className="fa-solid fa-plus-minus"></i></span>,
         title: "Min / Max Temperature",
         value: minTemp !== "" && maxTemp !== "" ? `${minTemp} °C / ${maxTemp} °C` : ""
     }

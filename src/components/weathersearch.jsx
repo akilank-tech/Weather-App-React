@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { WeatherContext } from "../context/weathercontext";
-import { Search } from "lucide-react";
 import axios from "axios";
+import CurrentLocation from "./currentlocation";
 const WeatherSearch = () => {
     const { city, setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp } = useContext(WeatherContext);
 
@@ -28,12 +28,15 @@ const WeatherSearch = () => {
 
     return (
         <div className="p-3 sm:p-10 md:p-16">
-            <header className="flex justify-center items-center gap-2 mb-8">
+            <header className="flex justify-between items-center gap-2 mb-8">
+                <div className="flex">
                 <h1 className="text-5xl sm:text-9xl">⛅</h1>
-                <div>
+                <div className="flex flex-col justify-center items-center">
                     <h1 className="text-xl font-bold sm:text-3xl">Weather App</h1>
                     <p className="text-xs sm:text-base">Check the weather details of any city</p>
                 </div>
+                </div>
+                <CurrentLocation/>
             </header>
             <div className="grid grid-cols-3 justify-between items-center gap-2 relative">
                 <input className="border border-1 ring-blue-200 ring-2 focus:outline-none focus:border-blue-500 focus:border-2 focus:ring-2 focus:ring-blue-200 text-xs col-span-2 border-blue-300 rounded-md p-2 sm:p-4 sm:text-base" value={city} type="text" placeholder="Enter the City Name" required onChange={handleCity}/>
