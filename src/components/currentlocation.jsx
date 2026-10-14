@@ -28,14 +28,14 @@ const CurrentLocation = () => {
                     const data = response.data;
                     setCity(data.name)
                     setWeather(data.weather[0].main)
-                    setTemp(Math.round(data.main.temp - 273.15))
+                    setTemp(Math.round(data.main.temp))
                     setDesc(data.weather[0].description)
-                    setFeelsLike(Math.round(data.main.feels_like - 273.15))
+                    setFeelsLike(Math.round(data.main.feels_like))
                     setHumidity(data.main.humidity)
                     setPressure(data.main.pressure)
                     setWindSpeed(data.wind.speed)
-                    setMinTemp((data.main.temp_min - 273.15).toFixed(1))
-                    setMaxTemp((data.main.temp_max - 273.15).toFixed(1))
+                    setMinTemp((data.main.temp_min).toFixed(1))
+                    setMaxTemp((data.main.temp_max).toFixed(1))
                 } catch (error) {
                     console.error("Full error:",error);
                     console.error("Error message :",error.message);
