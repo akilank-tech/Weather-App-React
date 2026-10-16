@@ -5,7 +5,7 @@ import axios from "axios";
 const API_KEY="0efe0b956e513b1217ad609add553e0e"
 const CurrentLocation = () => {
     
-    const { setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp } = useContext(WeatherContext);
+    const { setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp ,setIcon } = useContext(WeatherContext);
     const handleLocation = () => {
         if(!navigator.geolocation){
             alert("Geolocation is not supported by your browser.");
@@ -36,6 +36,7 @@ const CurrentLocation = () => {
                     setWindSpeed(data.wind.speed)
                     setMinTemp((data.main.temp_min).toFixed(1))
                     setMaxTemp((data.main.temp_max).toFixed(1))
+                    setIcon(data.weather[0].icon)
                 } catch (error) {
                     console.error("Full error:",error);
                     console.error("Error message :",error.message);

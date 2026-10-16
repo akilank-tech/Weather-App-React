@@ -12,8 +12,9 @@ const Weather = (data) => {
     const [windSpeed, setWindSpeed] = useState("")
     const [minTemp, setMinTemp] = useState("")
     const [maxTemp, setMaxTemp] = useState("")
+    const [icon,setIcon]=useState("")
     return (
-        <WeatherContext.Provider value={{city,setCity,weather,setWeather,desc,setDesc,temp,setTemp,feelsLike,setFeelsLike,humidity,setHumidity,pressure,setPressure,windSpeed,setWindSpeed,minTemp,setMinTemp,maxTemp,setMaxTemp}}>
+        <WeatherContext.Provider value={{city,setCity,weather,setWeather,desc,setDesc,temp,setTemp,feelsLike,setFeelsLike,humidity,setHumidity,pressure,setPressure,windSpeed,setWindSpeed,minTemp,setMinTemp,maxTemp,setMaxTemp,icon,setIcon}}>
             {data.children}
         </WeatherContext.Provider>
     )

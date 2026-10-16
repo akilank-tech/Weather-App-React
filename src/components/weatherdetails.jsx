@@ -1,13 +1,17 @@
 import { useContext } from "react";
 import { WeatherContext } from "../context/weathercontext";
 const WeatherDetails = () => {
-    const { weather, desc, temp, feelsLike, humidity, pressure, windSpeed, minTemp, maxTemp } = useContext(WeatherContext)
+    const { weather, desc, temp, feelsLike, humidity, pressure, windSpeed, minTemp, maxTemp,icon } = useContext(WeatherContext)
 
     const iconBase = "inline-flex h-10 w-10 items-center justify-center rounded-full " +
         "text-lg sm:h-12 sm:w-12 sm:text-2xl md:h-14 md:text-3xl"
 
     const details = [{
-        icon: <span className={`${iconBase} bg-blue-300 text-blue-600`}><i className="fa-regular fa-cloud"></i></span>,
+        icon: <span className={`${iconBase} bg-blue-300 text-blue-600`}><img
+            src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+            alt=""
+            className="w-24 h-24 object-contain"
+        /></span>,
         title: "Weather",
         value: weather
     },
