@@ -52,7 +52,7 @@ const WeatherDetails = () => {
     }
     ]
     return (
-        <div className="grid grid-cols-2 px-3 sm:px-10 md:px-15 pt-6 gap-4 mb-8 bg-[#F0F4FF] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 px-3 sm:px-10 md:px-15 pt-6 gap-4 pb-6 bg-[#F0F4FF] sm:grid-cols-2 lg:grid-cols-4">
             {
                 details.map((item) => {
                     return (

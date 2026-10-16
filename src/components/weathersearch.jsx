@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { WeatherContext } from "../context/weathercontext";
 import axios from "axios";
 import CurrentLocation from "./currentlocation";
+import WeatherIcon from "../assets/image/Cloud.jpeg";
 const WeatherSearch = () => {
     const { city, setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp, icon, setIcon } = useContext(WeatherContext);
 
@@ -28,14 +29,10 @@ const WeatherSearch = () => {
     }
 
     return (
-        <div className="p-3 mt-5 sm:p-10 md:p-16 bg-[#F0F4FF]">
+        <div className="p-3 sm:p-10 md:p-16 bg-[#F0F4FF]">
             <header className="flex justify-between items-center gap-2 mb-8">
                 <div className="flex gap-3">
-                    <img
-                        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-                        alt="Weather icon"
-                        className="w-20 h-20 object-contain sm:w-60 sm:h-60 text-xs sm:text-base"
-                    />
+                   <img src={WeatherIcon} alt="Weather" className="w-16 h-16 sm:w-24 sm:h-24 text-xl sm:text-3xl opject-contain" />
                     <div className="flex flex-col justify-center">
                         <h1 className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent text-xl font-bold sm:text-3xl">Weather App</h1>
                         <p className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent text-xs sm:text-base">Check the weather details of any city</p>
