@@ -7,10 +7,10 @@ const WeatherDetails = () => {
         "text-lg sm:h-12 sm:w-12 sm:text-2xl md:h-14 md:text-3xl"
 
     const details = [{
-        icon: <span className={`${iconBase} bg-blue-300 text-blue-600`}><img
+        icon: <span className={`${iconBase} bg-blue-300 text-blue-600 flex items-center justify-center overflow-hidden`}><img
             src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
             alt=""
-            className="w-24 h-24 object-contain"
+            className="w-full h-full object-contain"
         /></span>,
         title: "Weather",
         value: weather
@@ -52,11 +52,11 @@ const WeatherDetails = () => {
     }
     ]
     return (
-        <div className="grid grid-cols-2 px-3 sm:px-10 md:px-15 mt-6 gap-4 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 px-3 sm:px-10 md:px-15 pt-6 gap-4 mb-8 bg-[#F0F4FF] sm:grid-cols-2 lg:grid-cols-4">
             {
                 details.map((item) => {
                     return (
-                        <div className="min-w-0 rounded-xl bg-slate-50 p-4 shadow-sm" key={item.title}>
+                        <div className="min-w-0 rounded-xl bg-[#FFFFFF] p-4 shadow-sm" key={item.title}>
 
                             <div>
                                 {item.icon}

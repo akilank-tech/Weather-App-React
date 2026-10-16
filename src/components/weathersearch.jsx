@@ -28,13 +28,13 @@ const WeatherSearch = () => {
     }
 
     return (
-        <div className="p-3 mt-5 sm:p-10 md:p-16">
+        <div className="p-3 mt-5 sm:p-10 md:p-16 bg-[#F0F4FF]">
             <header className="flex justify-between items-center gap-2 mb-8">
                 <div className="flex gap-3">
                     <img
                         src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
                         alt="Weather icon"
-                        className="w-35 h-35 object-contain sm:w-60 sm:h-60"
+                        className="w-20 h-20 object-contain sm:w-60 sm:h-60 text-xs sm:text-base"
                     />
                     <div className="flex flex-col justify-center">
                         <h1 className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent text-xl font-bold sm:text-3xl">Weather App</h1>
