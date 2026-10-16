@@ -3,7 +3,7 @@ import { WeatherContext } from "../context/weathercontext";
 const WeatherSummary = () => {
     const { city, weather, desc, temp, feelsLike, icon } = useContext(WeatherContext)
     return (
-        <div className="px-3 sm:px-10 md:px-15 bg-[#F0F4FF]">
+        <div className="px-3 sm:px-10 md:px-15 bg-[#EBF1FF]">
             <div className="p-5 sm:p-10 flex justify-between items-center rounded-md shadow-lg bg-gradient-to-r from-blue-500 to-violet-500 text-white">
                 <img
                     src={`https://openweathermap.org/img/wn/${icon}@2x.png`}

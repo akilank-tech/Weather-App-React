@@ -29,7 +29,7 @@ const WeatherSearch = () => {
     }
 
     return (
-        <div className="p-3 sm:p-10 md:p-16 bg-[#F0F4FF]">
+        <div className="p-3 sm:p-10 md:p-16 bg-[#EBF1FF]">
             <header className="flex justify-between items-center gap-2 mb-8">
                 <div className="flex gap-3">
                    <img src={WeatherIcon} alt="Weather" className="w-16 h-16 sm:w-24 sm:h-24 text-xl sm:text-3xl opject-contain" />
