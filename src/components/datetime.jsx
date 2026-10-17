@@ -14,8 +14,8 @@ const DateTime = () => {
     })
     return (
         <div>
-            <p className="text-xs sm:text-base">{date}</p>
-            <p className="text-xs sm:text-base">{time}</p>
+            <p className="text-xs sm:text-base mb-1">{date}</p>
+            <p className="text-xs sm:text-base mb-1">{time}</p>
         </div>
     )
 }

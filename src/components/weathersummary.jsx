@@ -13,8 +13,8 @@ const WeatherSummary = () => {
                 />
                 <div className="flex">
                     <div className="flex flex-col items-left justify-center border-r-1 border-r-white pr-2 sm:p-5">
-                        <h2 className="text-xl font-bold sm:text-5xl mb-2 sm:mb-3">{temp ? `${temp}°C` : "--"}</h2>
-                        <p className="text-xs sm:text-base">Feels Like {feelsLike ? `${feelsLike}°C` : "--"}</p>
+                        <h2 className="text-xl font-bold sm:text-5xl mb-1 sm:mb-3">{temp ? `${temp}°C` : "--"}</h2>
+                        <p className="text-xs sm:text-base mb-1">Feels Like {feelsLike ? `${feelsLike}°C` : "--"}</p>
                        <DateTime/>
                     </div>
                     <div className="flex flex-col items-left p-2 sm:p-5">
