@@ -2,12 +2,12 @@ import { WeatherContext } from "../context/weathercontext";
 import { useContext } from "react";
 import axios from "axios";
 
-const API_KEY="0efe0b956e513b1217ad609add553e0e"
+const API_KEY = "0efe0b956e513b1217ad609add553e0e"
 const CurrentLocation = () => {
-    
-    const { setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp ,setIcon } = useContext(WeatherContext);
+
+    const { setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp, setIcon, setDate, setTime } = useContext(WeatherContext);
     const handleLocation = () => {
-        if(!navigator.geolocation){
+        if (!navigator.geolocation) {
             alert("Geolocation is not supported by your browser.");
             return;
         }
@@ -19,7 +19,7 @@ const CurrentLocation = () => {
                     const response = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
                         params: {
                             lat,
-                            lon, 
+                            lon,
                             appid: API_KEY,
                             units: "metric",
                         },
@@ -37,12 +37,15 @@ const CurrentLocation = () => {
                     setMinTemp((data.main.temp_min).toFixed(1))
                     setMaxTemp((data.main.temp_max).toFixed(1))
                     setIcon(data.weather[0].icon)
+                    const dateTime = new Date(data.dt * 1000)
+                    setDate(dateTime.toLocaleDateString("en-IN"))
+                    setTime(dateTime.toLocaleTimeString("en-IN"))
                 } catch (error) {
-                    console.error("Full error:",error);
-                    console.error("Error message :",error.message);
-                    console.error("stack:",error.stack);
+                    console.error("Full error:", error);
+                    console.error("Error message :", error.message);
+                    console.error("stack:", error.stack);
                     alert(
-                
+
                         error.message)
                 }
             },

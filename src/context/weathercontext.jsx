@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const WeatherContext = createContext()
 const Weather = (data) => {
     const [city, setCity] = useState("")
+    const [searchcity, setSearchCity] = useState("")
     const [weather, setWeather] = useState("")
     const [temp, setTemp] = useState("")
     const [desc, setDesc] = useState("")
@@ -12,9 +13,12 @@ const Weather = (data) => {
     const [windSpeed, setWindSpeed] = useState("")
     const [minTemp, setMinTemp] = useState("")
     const [maxTemp, setMaxTemp] = useState("")
-    const [icon,setIcon]=useState("")
+    const [icon, setIcon] = useState("")
+    const [date, setDate] = useState("")
+    const [time, setTime] = useState("")
+    
     return (
-        <WeatherContext.Provider value={{city,setCity,weather,setWeather,desc,setDesc,temp,setTemp,feelsLike,setFeelsLike,humidity,setHumidity,pressure,setPressure,windSpeed,setWindSpeed,minTemp,setMinTemp,maxTemp,setMaxTemp,icon,setIcon}}>
+        <WeatherContext.Provider value={{ city, setCity, searchcity, setSearchCity, weather, setWeather, desc, setDesc, temp, setTemp, feelsLike, setFeelsLike, humidity, setHumidity, pressure, setPressure, windSpeed, setWindSpeed, minTemp, setMinTemp, maxTemp, setMaxTemp, icon, setIcon, date, setDate, time, setTime }}>
             {data.children}
         </WeatherContext.Provider>
     )

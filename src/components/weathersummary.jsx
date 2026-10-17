@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { WeatherContext } from "../context/weathercontext";
+import DateTime from "./datetime";
 const WeatherSummary = () => {
-    const { city, weather, desc, temp, feelsLike, icon } = useContext(WeatherContext)
+    const { city, weather, desc, temp, feelsLike, icon, date, time } = useContext(WeatherContext)
     return (
         <div className="px-3 sm:px-10 md:px-15 bg-[#EBF1FF]">
             <div className="p-5 sm:p-10 flex justify-between items-center rounded-md shadow-lg bg-gradient-to-r from-blue-500 to-violet-500 text-white">
@@ -12,16 +13,19 @@ const WeatherSummary = () => {
                 />
                 <div className="flex">
                     <div className="flex flex-col items-left justify-center border-r-1 border-r-white pr-2 sm:p-5">
-                        <h2 className="text-xl font-bold sm:text-3xl mb-2 sm:mb-3">{temp ? `${temp}°C` : "--"}</h2>
+                        <h2 className="text-xl font-bold sm:text-5xl mb-2 sm:mb-3">{temp ? `${temp}°C` : "--"}</h2>
                         <p className="text-xs sm:text-base">Feels Like {feelsLike ? `${feelsLike}°C` : "--"}</p>
+                       <DateTime/>
                     </div>
                     <div className="flex flex-col items-left p-2 sm:p-5">
-                        <h3 className="text-xl font-bold sm:text-3xl mb-2 sm:mb-3">{city}</h3>
+                        <h3 className="text-xl font-bold sm:text-5xl mb-2 sm:mb-3">{city}</h3>
                         <p className="text-xs sm:text-base mb-2 sm:mb-3">{desc}</p>
                         <p className="text-xs sm:text-base">{weather}</p>
                     </div>
                 </div>
-                <div></div>
+                <div>
+
+                </div>
             </div>
         </div>
     )
