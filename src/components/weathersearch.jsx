@@ -4,19 +4,27 @@ import axios from "axios";
 import CurrentLocation from "./currentlocation";
 import WeatherIcon from "../assets/image/Cloud.jpeg";
 const WeatherSearch = () => {
-    const { city, setCity, searchcity, setSearchCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp, setIcon, setDate, setTime } = useContext(WeatherContext);
+    const { inputCity,setInputCity,city, setCity, searchcity, setSearchCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp, setIcon, setDate, setTime } = useContext(WeatherContext);
 
     const handleCity = (evt) => {
-        setSearchCity(evt.target.value)
+        setInputCity(evt.target.value)
+        
     }
 
     const handleWeather = () => {
-        const weatherdata = axios(`https://api.openweathermap.org/data/2.5/weather?q=${searchcity}&appid=0efe0b956e513b1217ad609add553e0e`)
+        if(!inputCity.trim()){
+            alert("Enter your city name")
+            return
+        }
+        const searchName =inputCity.trim()
+        const weatherdata = axios(`https://api.openweathermap.org/data/2.5/weather?q=${searchName}&appid=0efe0b956e513b1217ad609add553e0e`)
 
         weatherdata.then((success) => {
 
             console.log(success.data)
-            setCity(searchcity)
+            setCity(success.data.name)
+            setSearchCity(success.data.name)
+
             setWeather(success.data.weather[0].main)
             setDesc(success.data.weather[0].description)
             setTemp(Math.round(success.data.main.temp - 273.15))
@@ -27,12 +35,12 @@ const WeatherSearch = () => {
             setMinTemp((success.data.main.temp_min - 273.15).toFixed(1))
             setMaxTemp((success.data.main.temp_max - 273.15).toFixed(1))
             setIcon(success.data.weather[0].icon)
-            const dateTime = new Date(success.data.dt * 1000)
-            setDate(dateTime.toLocaleDateString("en-IN"))
-            setTime(dateTime.toLocaleTimeString("en-IN"))
+            setInputCity("")
+            
+            
         }).catch((error) => {
             if (error.response?.status === 404) {
-                alert("City not found! Please enter a correct city name.")
+                alert("Invalid cityname ! Please enter a correct city name.")
             } else {
                 alert("Something went wrong. Please try again.")
             }
@@ -53,7 +61,7 @@ const WeatherSearch = () => {
                 <CurrentLocation />
             </header>
             <div className="grid grid-cols-3 justify-between items-center gap-2 relative">
-                <input className="border border-1 ring-blue-200 ring-2 focus:outline-none focus:border-blue-500 focus:border-2 focus:ring-2 focus:ring-blue-200 text-xs col-span-2 border-blue-300 rounded-md p-2 sm:p-4 sm:text-base" value={searchcity} type="text" placeholder="Enter the City Name" required onChange={handleCity} />
+                <input className="border border-1 ring-blue-200 ring-2 focus:outline-none focus:border-blue-500 focus:border-2 focus:ring-2 focus:ring-blue-200 text-xs col-span-2 border-blue-300 rounded-md p-2 sm:p-4 sm:text-base" value={inputCity} type="text" placeholder="Enter the City Name" required onChange={handleCity} />
                 <button className="relative cursor-pointer focus:outline-none bg-gradient-to-r from-cyan-500 to-violet-500 text-xs text-white p-2 rounded-md sm:p-4 sm:text-base" onClick={handleWeather}>
                     <i className="fa-solid fa-magnifying-glass absolute left-[4%] top-[50%] sm:left-[10%] -translate-y-1.5 z-10 text-white text-xs sm:text-base"></i>
                     <span className="block text-center">Get Weather</span>
