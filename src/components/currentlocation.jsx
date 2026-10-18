@@ -5,7 +5,7 @@ import axios from "axios";
 const API_KEY = "0efe0b956e513b1217ad609add553e0e"
 const CurrentLocation = () => {
 
-    const { setCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp, setIcon, setDate, setTime } = useContext(WeatherContext);
+    const { setCity,setSearchCity, setWeather, setDesc, setTemp, setFeelsLike, setHumidity, setPressure, setWindSpeed, setMinTemp, setMaxTemp, setIcon, setDate, setTime } = useContext(WeatherContext);
     const handleLocation = () => {
         if (!navigator.geolocation) {
             alert("Geolocation is not supported by your browser.");
@@ -27,6 +27,7 @@ const CurrentLocation = () => {
                     )
                     const data = response.data;
                     setCity(data.name)
+                    setSearchCity(data.name)
                     setWeather(data.weather[0].main)
                     setTemp(Math.round(data.main.temp))
                     setDesc(data.weather[0].description)
@@ -37,16 +38,12 @@ const CurrentLocation = () => {
                     setMinTemp((data.main.temp_min).toFixed(1))
                     setMaxTemp((data.main.temp_max).toFixed(1))
                     setIcon(data.weather[0].icon)
-                    const dateTime = new Date(data.dt * 1000)
-                    setDate(dateTime.toLocaleDateString("en-IN"))
-                    setTime(dateTime.toLocaleTimeString("en-IN"))
+                   
                 } catch (error) {
                     console.error("Full error:", error);
                     console.error("Error message :", error.message);
                     console.error("stack:", error.stack);
-                    alert(
-
-                        error.message)
+                    alert( error.message)
                 }
             },
             () => {
