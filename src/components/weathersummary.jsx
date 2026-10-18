@@ -19,7 +19,7 @@ const WeatherSummary = () => {
                     </div>
                     <div className="flex flex-col items-left p-2 sm:p-5">
                         <h3 className="text-white text-xl font-bold sm:text-5xl mb-2 sm:mb-3">{city}</h3>
-                        <p className="text-amber-100 text-xs sm:text-base mb-2 sm:mb-3">{desc}</p>
+                        <p className="text-[#F1F5F9] text-xs sm:text-base mb-2 sm:mb-3">{desc}</p>
                         <p className="text-cyan-100 text-xs sm:text-base">{weather}</p>
                     </div>
                 </div>
