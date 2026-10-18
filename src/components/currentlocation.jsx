@@ -1,6 +1,7 @@
 import { WeatherContext } from "../context/weathercontext";
 import { useContext } from "react";
 import axios from "axios";
+import { MapPinned } from "lucide-react";
 
 const API_KEY = "0efe0b956e513b1217ad609add553e0e"
 const CurrentLocation = () => {
@@ -53,7 +54,7 @@ const CurrentLocation = () => {
     }
     return (
         <div>
-            <button onClick={handleLocation} className="bg-gradient-to-r focus:outline-none from-blue-500 to-violet-500 bg-clip-text text-transparent cursor-pointer text-4xl sm:text-6xl"><i className="fa-solid fa-location-dot"></i></button>
+            <button onClick={handleLocation} className="w-full flex items-center justify-center gap-2  bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-3 px-3 sm:py-4.5 sm:px-6 rounded-xl shadow-lg hover-shadow-xl transition-all duration-300 transform active:scale-95 text-xs outline-none sm:text-xl cursor-pointer"><MapPinned className=" w-4 h-4 sm:w-5 sm:h-5"/>Get Weather</button>
         </div>
     )
 }

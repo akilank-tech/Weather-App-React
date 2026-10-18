@@ -12,15 +12,15 @@ const WeatherSummary = () => {
                     className="w-20 h-20 object-contain sm:w-60 sm:h-60 text-xs sm:text-base"
                 />
                 <div className="flex">
-                    <div className="flex flex-col items-left justify-center border-r-1 border-r-white pr-2 sm:p-5">
-                        <h2 className="text-xl font-bold sm:text-5xl mb-1 sm:mb-3">{temp ? `${temp}°C` : "--"}</h2>
-                        <p className="text-xs sm:text-base mb-1">Feels Like {feelsLike ? `${feelsLike}°C` : "--"}</p>
+                    <div className="flex flex-col items-left justify-center border-r-1 border-r-[#25234A] pr-2 sm:p-5">
+                        <h2 className="text-xl text-[#25234A] font-bold sm:text-5xl mb-1 sm:mb-3">{temp ? `${temp}°C` : "--"}</h2>
+                        <p className="text-xs text-[#25234A] sm:text-base mb-1">Feels Like {feelsLike ? `${feelsLike}°C` : "--"}</p>
                        <DateTime/>
                     </div>
                     <div className="flex flex-col items-left p-2 sm:p-5">
-                        <h3 className="text-xl font-bold sm:text-5xl mb-2 sm:mb-3">{city}</h3>
-                        <p className="text-xs sm:text-base mb-2 sm:mb-3">{desc}</p>
-                        <p className="text-xs sm:text-base">{weather}</p>
+                        <h3 className="text-[#25234A] text-xl font-bold sm:text-5xl mb-2 sm:mb-3">{city}</h3>
+                        <p className="text-[#25234A] text-xs sm:text-base mb-2 sm:mb-3">{desc}</p>
+                        <p className="text-[#25234A] text-xs sm:text-base">{weather}</p>
                     </div>
                 </div>
                 <div>

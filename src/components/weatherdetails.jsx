@@ -61,7 +61,7 @@ const WeatherDetails = () => {
                             <div>
                                 {item.icon}
                                 <p className="text-sm text-slate-500 mt-3">{item.title}</p>
-                                <h3 className="mt-2 break-words font-bold text-indigo-950">
+                                <h3 className="mt-2 break-words font-bold text-[#6D3BE8]">
                                     {item.value || "--"}
                                 </h3>
                             </div>
