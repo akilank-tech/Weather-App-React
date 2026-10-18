@@ -54,7 +54,7 @@ const CurrentLocation = () => {
     }
     return (
         <div>
-            <button onClick={handleLocation} className="w-full flex items-center justify-center gap-2  bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-3 px-3 sm:py-4.5 sm:px-6 rounded-xl shadow-lg hover-shadow-xl transition-all duration-300 transform active:scale-95 text-xs outline-none sm:text-xl cursor-pointer"><MapPinned className=" w-4 h-4 sm:w-5 sm:h-5"/>Get Weather</button>
+            <button onClick={handleLocation} className="w-full flex items-center justify-center gap-2  bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 mt-2 text-white font-semibold py-3 px-2 sm:py-4.5 sm:px-6 rounded-xl shadow-lg hover-shadow-xl transition-all duration-300 transform active:scale-95 text-xs outline-none sm:text-xl cursor-pointer"><MapPinned className=" w-4 h-4 sm:w-5 sm:h-5"/>Get Weather</button>
         </div>
     )
 }
